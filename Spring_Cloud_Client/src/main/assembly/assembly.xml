@@ -1,0 +1,39 @@
+<assembly>
+	<id>${env}</id>
+	<formats>
+		<format>zip</format><!--打包的文件格式,也可以有：war zip -->
+	</formats>
+	<!--tar.gz压缩包下是否生成和项目名相同的根目录 -->
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<!-- <dependencySets>
+		<dependencySet>
+			是否把本项目添加到依赖文件夹下
+			<useProjectArtifact>true</useProjectArtifact>
+			<outputDirectory>lib</outputDirectory>
+			将scope为runtime的依赖包打包
+			<scope>runtime</scope>
+		</dependencySet>
+	</dependencySets> -->
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.directory}</directory>
+			<outputDirectory>lib</outputDirectory>
+			<includes>
+				<include>*.jar</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/bin</directory>
+			<outputDirectory>/bin</outputDirectory>
+		</fileSet>
+		<!-- <fileSet> <directory>src/main/resources</directory> <outputDirectory>/</outputDirectory> 
+			去除需要多环境配置的文件 <excludes> <exclude>application.yml</exclude> </excludes> </fileSet> -->
+		<!--多环境配置 -->
+		<fileSet>
+			<!-- ${env} 可以获取打包命令里的参数 -->
+			<directory>src/main/resources/conf/${env}</directory>
+			<outputDirectory>/conf</outputDirectory>
+		</fileSet>
+	
+	</fileSets>
+</assembly>
