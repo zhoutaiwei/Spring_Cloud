@@ -1,5 +1,9 @@
 /target
 /.settings
 .project
-/.metadate/
-/.plugins/
+.metadata/
+/.plugins
+/.recommenders
+*.jar
+*.zip
+.classpath
