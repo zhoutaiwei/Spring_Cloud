@@ -13,6 +13,9 @@
 		<module>Spring_Cloud_Feign</module>
 		<module>Spring_Cloud_Zuul</module>
 
+		<module>Config_Server</module>
+		<module>Config_Client</module>
+		<module>Eureka_Server</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
