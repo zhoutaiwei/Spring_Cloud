@@ -16,7 +16,7 @@ public class EmitLog {
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();
 		//fanout表示分发，所有的消费者得到同样的队列信息
-	//	channel.exchangeDeclare(EXCHANGE_NAME, "fanout") ;
+		channel.exchangeDeclare(EXCHANGE_NAME, "fanout") ;
 		//發送消息
 		for (int i = 0; i <10; i++) {
 			  String message="Hello World"+i;

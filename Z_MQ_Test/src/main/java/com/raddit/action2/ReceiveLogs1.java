@@ -20,7 +20,7 @@ public class ReceiveLogs1 {
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();
 		// fanout表示分发，所有的消费者得到同样的队列信息
-		channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
+		/*channel.exchangeDeclare(EXCHANGE_NAME, "fanout");*/
 		// 產生一個所及的隊列名稱
 		String queueName = channel.queueDeclare().getQueue();
 		// 对队列进行绑定
