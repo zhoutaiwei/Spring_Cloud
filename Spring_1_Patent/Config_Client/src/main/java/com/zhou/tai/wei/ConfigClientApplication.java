@@ -15,10 +15,10 @@ public class ConfigClientApplication {
         SpringApplication.run(ConfigClientApplication.class, args);
     }
 //http://127.0.0.1:8888/server/port
-    @Value("${server.port}")
-    String foo;
+    /*@Value("${server.port}")
+    String foo;*/
     @RequestMapping(value = "/hi")
     public String hi(){
-        return foo;
+        return "success";
     }
 }
